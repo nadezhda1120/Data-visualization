@@ -1,0 +1,20 @@
+library(ggplot2)
+
+
+df_real_estate <- read.csv("C:/Users/User/Desktop/BI intelligence/data visualization/histogram_data.csv",
+                           sep = ",",
+                           header = TRUE)
+
+hist <- ggplot(df_real_estate,
+               aes(x = Price)) +
+              geom_histogram(bins = 10,
+                             fill = "#108A99",
+                             color = "white") +
+              theme_classic() +
+              ggtitle("Distribution of Real Estate Price")+
+              xlab("Price in (000$)")+
+              ylab("Number of properties")+
+              theme(plot.title =element_text(size = 16,
+                                                 face = "bold"))
+
+hist
